@@ -1,45 +1,36 @@
 import PropTypes from 'prop-types';
-import {
-  UserCard,
-  Description,
-  Avatar,
-  Name,
-  Tag,
-  Location,
-  Stats,
-  Item,
-  Label,
-  Quantity,
-} from './Profile.styled';
+import * as S from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
-    <UserCard>
-      <Description>
-        <Avatar
-          src={avatar ?? 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png'}
+    <S.UserCard>
+      <S.Description>
+        <S.Avatar
+          src={
+            avatar ?? 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png'
+          }
           alt={username}
         />
-        <Name>{username}</Name>
-        <Tag>@{tag}</Tag>
-        <Location>{location}</Location>
-      </Description>
+        <S.Name>{username}</S.Name>
+        <S.Tag>@{tag}</S.Tag>
+        <S.Location>{location}</S.Location>
+      </S.Description>
 
-      <Stats>
-        <Item>
-          <Label>Followers</Label>
-          <Quantity>{stats.followers}</Quantity>
-        </Item>
-        <Item>
-          <Label>Views</Label>
-          <Quantity>{stats.views}</Quantity>
-        </Item>
-        <Item>
-          <Label>Likes</Label>
-          <Quantity>{stats.likes}</Quantity>
-        </Item>
-      </Stats>
-    </UserCard>
+      <S.Stats>
+        <S.Item>
+          <S.Label>Followers</S.Label>
+          <S.Quantity>{stats.followers}</S.Quantity>
+        </S.Item>
+        <S.Item>
+          <S.Label>Views</S.Label>
+          <S.Quantity>{stats.views}</S.Quantity>
+        </S.Item>
+        <S.Item>
+          <S.Label>Likes</S.Label>
+          <S.Quantity>{stats.likes}</S.Quantity>
+        </S.Item>
+      </S.Stats>
+    </S.UserCard>
   );
 };
 
