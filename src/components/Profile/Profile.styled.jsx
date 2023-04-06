@@ -44,7 +44,7 @@ export const Location = styled.p`
   color: ${props => props.theme.colors.secondaryText};
 `;
 
-export const Stats = styled.ul`
+export const StatsList = styled.ul`
   display: flex;
   list-style: none;
 `;

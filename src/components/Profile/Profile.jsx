@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import * as S from './Profile.styled';
+import { toCapitalLetter } from 'utils';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
@@ -16,8 +17,19 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
         <S.Location>{location}</S.Location>
       </S.Description>
 
-      <S.Stats>
-        <S.Item>
+      <S.StatsList>
+        {Object.keys(stats).map(keyStat => {
+          const labelStat = toCapitalLetter(keyStat);
+          const quantityStat = stats[keyStat];
+
+          return (
+            <S.Item key={keyStat}>
+              <S.Label>{labelStat}</S.Label>
+              <S.Quantity>{quantityStat}</S.Quantity>
+            </S.Item>
+          );
+        })}
+        {/* <S.Item>
           <S.Label>Followers</S.Label>
           <S.Quantity>{stats.followers}</S.Quantity>
         </S.Item>
@@ -28,8 +40,8 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
         <S.Item>
           <S.Label>Likes</S.Label>
           <S.Quantity>{stats.likes}</S.Quantity>
-        </S.Item>
-      </S.Stats>
+        </S.Item> */}
+      </S.StatsList>
     </S.UserCard>
   );
 };

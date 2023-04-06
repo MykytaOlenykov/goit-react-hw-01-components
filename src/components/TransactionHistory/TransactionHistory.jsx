@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Table } from './TransactionHistory.styled';
+import { toCapitalLetter } from 'utils';
 
 export const TransactionHistory = ({ items }) => {
   return (
@@ -14,7 +15,7 @@ export const TransactionHistory = ({ items }) => {
 
       <tbody>
         {items.map(({ id, type, amount, currency }) => {
-          const transactionType = type[0].toUpperCase() + type.slice(1);
+          const transactionType = toCapitalLetter(type);
 
           return (
             <tr key={id}>
