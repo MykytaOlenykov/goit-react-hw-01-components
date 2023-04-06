@@ -1,4 +1,3 @@
-import { ModernNormalize } from 'emotion-modern-normalize';
 import { GlobalStyles } from 'components/GlobalStyles';
 import { Profile } from 'components/Profile';
 import { Statistics } from 'components/Statistics';
@@ -13,7 +12,6 @@ import { Container } from './App.styled';
 export const App = () => {
   return (
     <Container>
-      <ModernNormalize />
       <GlobalStyles />
       <Profile
         username={user.username}

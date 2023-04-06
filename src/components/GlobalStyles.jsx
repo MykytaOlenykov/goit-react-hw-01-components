@@ -1,7 +1,9 @@
 import { Global, css } from '@emotion/react';
+import { ModernNormalize } from 'emotion-modern-normalize';
 
 export const GlobalStyles = () => (
   <>
+    <ModernNormalize />
     <Global
       styles={css`
         h1,
