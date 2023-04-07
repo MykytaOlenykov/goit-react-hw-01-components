@@ -4,6 +4,7 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   padding: 12px 20px;
+  color: ${props => props.theme.colors.primaryText};
   background-color: ${props => props.theme.colors.primary};
   border-radius: 2px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
