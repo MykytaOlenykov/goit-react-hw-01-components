@@ -7,11 +7,11 @@ import user from 'user';
 import data from 'data';
 import friends from 'friends';
 import transactions from 'transactions';
-import { Container } from './App.styled';
+import * as S from './App.styled';
 
 export const App = () => {
   return (
-    <Container>
+    <S.Container>
       <GlobalStyles />
       <Profile
         username={user.username}
@@ -24,6 +24,6 @@ export const App = () => {
       <Statistics stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </Container>
+    </S.Container>
   );
 };

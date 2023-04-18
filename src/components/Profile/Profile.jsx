@@ -3,6 +3,8 @@ import * as S from './Profile.styled';
 import { toCapitalLetter } from 'utils';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
+  const labelsStat = Object.keys(stats);
+
   return (
     <S.UserCard>
       <S.Description>
@@ -18,7 +20,7 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       </S.Description>
 
       <S.StatsList>
-        {Object.keys(stats).map(keyStat => {
+        {labelsStat.map(keyStat => {
           const labelStat = toCapitalLetter(keyStat);
           const quantityStat = stats[keyStat];
 
@@ -29,18 +31,6 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
             </S.Item>
           );
         })}
-        {/* <S.Item>
-          <S.Label>Followers</S.Label>
-          <S.Quantity>{stats.followers}</S.Quantity>
-        </S.Item>
-        <S.Item>
-          <S.Label>Views</S.Label>
-          <S.Quantity>{stats.views}</S.Quantity>
-        </S.Item>
-        <S.Item>
-          <S.Label>Likes</S.Label>
-          <S.Quantity>{stats.likes}</S.Quantity>
-        </S.Item> */}
       </S.StatsList>
     </S.UserCard>
   );
@@ -50,7 +40,7 @@ Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
+  avatar: PropTypes.string,
   stats: PropTypes.exact({
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
