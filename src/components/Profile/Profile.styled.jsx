@@ -58,7 +58,7 @@ export const Item = styled.li`
   background-color: ${props => props.theme.colors.primaryBg};
   border-top: 1px solid rgb(220, 220, 220);
 
-  :not(:last-child) {
+  &:not(:last-child) {
     border-right: 1px solid rgb(220, 220, 220);
   }
 `;

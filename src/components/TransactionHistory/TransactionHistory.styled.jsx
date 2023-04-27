@@ -9,38 +9,38 @@ export const Table = styled.table`
     0px 2px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 
-  th {
+  & th {
     padding: 5px;
     color: ${props => props.theme.colors.primary};
     background-color: ${props => props.theme.colors.secondaryBg};
 
-    :first-of-type {
+    &:first-of-type {
       border-top-left-radius: 2px;
     }
 
-    :last-of-type {
+    &:last-of-type {
       border-top-right-radius: 2px;
     }
   }
 
-  td {
+  & td {
     padding: 5px;
     background-color: ${props => props.theme.colors.primary};
   }
 
-  tbody {
+  & tbody {
     color: ${props => props.theme.colors.secondaryText};
 
-    tr:nth-of-type(2n) td {
+    & tr:nth-of-type(2n) td {
       background-color: ${props => props.theme.colors.primaryBg};
     }
 
-    tr:last-of-type {
-      td:first-of-type {
+    & tr:last-of-type {
+      & td:first-of-type {
         border-bottom-left-radius: 2px;
       }
 
-      td:last-of-type {
+      & td:last-of-type {
         border-bottom-right-radius: 2px;
       }
     }
