@@ -1,4 +1,4 @@
-export const theme = {
+const theme = Object.freeze({
   colors: {
     primary: '#fff',
     primaryBg: '#ededed',
@@ -8,4 +8,8 @@ export const theme = {
     statusOnline: '#109410',
     statusOffline: '#d71b1b',
   },
-};
+});
+
+Object.freeze(theme.colors);
+
+export { theme };

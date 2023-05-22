@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
-import * as S from './Profile.styled';
 import { toCapitalLetter } from 'utils';
+import * as S from './Profile.styled';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+  stats,
+}) => {
   const labelsStat = Object.keys(stats);
 
   return (
     <S.UserCard>
       <S.Description>
-        <S.Avatar
-          src={
-            avatar ?? 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png'
-          }
-          alt={username}
-        />
+        <S.Avatar src={avatar} alt={username} />
         <S.Name>{username}</S.Name>
         <S.Tag>@{tag}</S.Tag>
         <S.Location>{location}</S.Location>
