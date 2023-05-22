@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import { filterStats } from 'utils';
+import { filterStatsByLabel } from 'utils';
 import * as S from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
-  const filteredStats = filterStats(stats);
+  const filteredStats = filterStatsByLabel(stats);
 
   return (
     <S.Section>

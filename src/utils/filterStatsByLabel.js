@@ -1,4 +1,4 @@
-export function filterStats(stats) {
+export function filterStatsByLabel(stats) {
   return stats.reduce((acc, stat) => {
     const accStat = acc.find(accStat => accStat.label === stat.label);
 
