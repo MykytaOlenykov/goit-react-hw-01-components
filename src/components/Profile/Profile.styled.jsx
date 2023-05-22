@@ -19,6 +19,7 @@ export const Description = styled.div`
 export const Avatar = styled.img`
   margin-bottom: 30px;
   width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: ${props => props.theme.colors.secondaryBg};
 `;
